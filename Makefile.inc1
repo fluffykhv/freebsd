@@ -2285,7 +2285,7 @@ _elftctools=	lib/libelftc \
 # These are not required by the build, but can be useful for developers who
 # cross-build on a FreeBSD 10 host:
 _elftctools+=	usr.bin/addr2line
-_elftctools+=	${_secure_lib_libcrypto}
+_elftctools+=	secure/lib/libcrypto
 .endif
 .elif ${TARGET_ARCH} != ${MACHINE_ARCH} && ${MK_ELFTOOLCHAIN_BOOTSTRAP} != "no"
 # If cross-building with an external binutils we still need to build strip for
@@ -2293,7 +2293,7 @@ _elftctools+=	${_secure_lib_libcrypto}
 _elftctools=	lib/libelftc \
 		lib/libpe \
 		usr.bin/objcopy
-_elftctools+=	${_secure_lib_libcrypto}
+_elftctools+=	secure/lib/libcrypto
 .endif
 
 .if ${MK_CLANG_BOOTSTRAP} != "no"
@@ -3156,6 +3156,7 @@ _xb-build-tools: .PHONY
 	${CDBENV} ${MAKE} ${CDMAKEARGS} -f Makefile.inc1 ${NOFUN} build-tools
 
 XDEVDIRS= \
+    ${_secure_lib_librypto}
     ${_clang_libs} \
     ${_lld} \
     ${_binutils} \
