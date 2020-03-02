@@ -201,7 +201,7 @@ CRUNCH_LIBS+=	${LDADD_zstd}
 CRUNCH_PROGS_usr.bin+= tar
 CRUNCH_LIBS+= -larchive
 .if ${MK_OPENSSL} != "no"
-CRUNCH_LIBS+= -lcrypto
+CRUNCH_LIBS+= -lprivatecrypto
 .endif
 CRUNCH_LIBS+= -lmd
 

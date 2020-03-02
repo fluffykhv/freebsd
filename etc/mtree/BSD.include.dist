@@ -333,8 +333,6 @@
         stm
         ..
     ..
-    openssl
-    ..
     pcap
     ..
     protocols

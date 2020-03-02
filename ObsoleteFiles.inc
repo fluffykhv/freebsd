@@ -38,6 +38,20 @@
 #   xargs -n1 | sort | uniq -d;
 # done
 
+# 20200229: Update for making ssl libs private
+OLD_LIBS+=lib/libcrypto.so.111
+OLD_FILES+=usr/lib/libcrypto.a
+OLD_FILES+=usr/lib/libcrypto.so
+OLD_FILES+=usr/lib/libssl.a
+OLD_FILES+=usr/lib/libssl.so
+OLD_LIBS+=usr/lib/libssl.so.111
+OLD_FILES+=usr/lib32/libcrypto.a
+OLD_FILES+=usr/lib32/libcrypto.so
+OLD_LIBS+=usr/lib32/libcrypto.so.111
+OLD_FILES+=usr/lib32/libssl.a
+OLD_FILES+=usr/lib32/libssl.so
+OLD_LIBS+=usr/lib32/libssl.so.111
+
 # 20200115: gcc libssp removed
 OLD_FILES+=usr/include/ssp/ssp.h
 OLD_FILES+=usr/include/ssp/stdio.h

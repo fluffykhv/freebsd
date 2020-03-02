@@ -4,6 +4,8 @@ LIB=		ssl
 SHLIB_MAJOR=	111
 VERSION_MAP=	${.CURDIR}/Version.map
 
+PRIVATELIB=	true
+
 NO_LINT=
 
 .include "../libcrypto/Makefile.inc"

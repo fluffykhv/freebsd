@@ -25,6 +25,8 @@
                     ..
                 ..
             ..
+            openssl
+            ..
             sqlite3
             ..
             ucl

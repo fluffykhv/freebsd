@@ -9,6 +9,8 @@ LIB=		crypto
 SHLIB_MAJOR=	111
 VERSION_MAP=	${.CURDIR}/Version.map
 
+PRIVATELIB=	true
+
 NO_LINT=
 
 .include "Makefile.man"
@@ -409,7 +411,7 @@ INCS+=	ssl3.h sslerr.h stack.h store.h storeerr.h symhacks.h tls1.h ts.h
 INCS+=	tserr.h txt_db.h ui.h uierr.h whrlpool.h x509.h x509_vfy.h x509err.h
 INCS+=	x509v3.h x509v3err.h
 
-INCSDIR=	${INCLUDEDIR}/openssl
+INCSDIR=	${INCLUDEDIR}/private/openssl
 
 LIBADD=	pthread
 
