@@ -2022,7 +2022,7 @@ legacy: .PHONY
 	false
 .endif
 
-.for _tool in tools/build ${_elftoolchain_libs} ${_config_deps} ${_secure_lib_libcrypto}
+.for _tool in tools/build ${_secure_lib_libcrypto} ${_elftoolchain_libs} ${_config_deps}
 	${_+_}@${ECHODIR} "===> ${_tool} (obj,includes,all,install)"; \
 	    cd ${.CURDIR}/${_tool}; \
 	    if [ -z "${NO_OBJWALK}" ]; then ${MAKE} DIRPRFX=${_tool}/ obj; fi; \
