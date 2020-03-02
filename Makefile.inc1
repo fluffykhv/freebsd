@@ -1091,6 +1091,7 @@ _cross-tools:
 	@echo "--------------------------------------------------------------"
 	@echo ">>> stage 3: cross tools"
 	@echo "--------------------------------------------------------------"
+	mkdir -p ${WORLDTMP}/usr/include/private/openssl
 	@rm -f ${OBJTOP}/toolchain-metadata.mk
 	${_+_}cd ${.CURDIR}; ${XMAKE} cross-tools
 	${_+_}cd ${.CURDIR}; ${XMAKE} kernel-tools
@@ -2069,7 +2070,7 @@ legacy: .PHONY
 	false
 .endif
 
-.for _tool in tools/build ${_config_deps}
+.for _tool in tools/build ${_config_deps} ${_secure_lib_libcrypto}
 	${_+_}@${ECHODIR} "===> ${_tool} (obj,includes,all,install)"; \
 	    cd ${.CURDIR}/${_tool}; \
 	    if [ -z "${NO_OBJWALK}" ]; then ${MAKE} DIRPRFX=${_tool}/ obj; fi; \
@@ -2351,6 +2352,7 @@ bootstrap-tools: ${_bt}-links .PHONY
 #	Try to bound the building of the bootstrap-tool to just the
 #	FreeBSD versions that need the tool built at this stage of the build.
 .for _tool in \
+    ${_secure_lib_libcrypto} \
     ${_clang_tblgen} \
     ${_kerberos5_bootstrap_tools} \
     ${_strfile} \
@@ -2512,6 +2514,7 @@ _ar=usr.bin/ar
 cross-tools: .MAKE .PHONY
 .for _tool in \
     ${LOCAL_XTOOL_DIRS} \
+    ${_secure_lib_libcrypto} \
     ${_ar} \
     ${_clang_libs} \
     ${_clang} \

@@ -104,7 +104,7 @@ CRUNCH_LIBS+= -lm
 # .include "Makefile.telnetd"
 .include "Makefile.fs"
 
-CRUNCH_LIBS+= -lcrypto -lssl -lz
+CRUNCH_LIBS+= -lprivatecrypto -lprivatessl -lz
 
 # the crunchgen build environment
 .include <bsd.crunchgen.mk>

@@ -18,7 +18,7 @@ krb5-config: krb5-config.in
 	    -e "s,@includedir@,${INCLUDEDIR},g" \
 	    -e "s,@LIB_crypt@,-lcrypt,g" \
 	    -e "s,@LIB_dbopen@,,g" \
-	    -e "s,@LIB_hcrypto_appl@,-lcrypto,g" \
+	    -e "s,@LIB_hcrypto_appl@,-lprivatecrypto,g" \
 	    -e "s,@LIB_pkinit@,-lhx509,g" \
 	    -e "s,@LIB_dlopen@,,g" \
 	    -e "s,@LIB_door_create@,,g" \

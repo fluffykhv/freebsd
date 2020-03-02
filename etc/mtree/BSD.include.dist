@@ -265,8 +265,6 @@
         stm
         ..
     ..
-    openssl
-    ..
     pcap
     ..
     protocols

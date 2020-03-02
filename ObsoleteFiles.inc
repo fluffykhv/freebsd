@@ -660,6 +660,20 @@ OLD_FILES+=usr/share/man/man1/gcpp.1.gz
 OLD_FILES+=usr/share/man/man1/gperf.1.gz
 OLD_FILES+=usr/share/man/man1/gperf.7.gz
 
+# 20200229: Update for making ssl libs private
+OLD_LIBS+=lib/libcrypto.so.111
+OLD_FILES+=usr/lib/libcrypto.a
+OLD_FILES+=usr/lib/libcrypto.so
+OLD_FILES+=usr/lib/libssl.a
+OLD_FILES+=usr/lib/libssl.so
+OLD_LIBS+=usr/lib/libssl.so.111
+OLD_FILES+=usr/lib32/libcrypto.a
+OLD_FILES+=usr/lib32/libcrypto.so
+OLD_LIBS+=usr/lib32/libcrypto.so.111
+OLD_FILES+=usr/lib32/libssl.a
+OLD_FILES+=usr/lib32/libssl.so
+OLD_LIBS+=usr/lib32/libssl.so.111
+
 # 20200220: Upgrade of ncurses, shlib bumped to version 9
 OLD_LIBS+=lib/libncurses.so.8
 OLD_LIBS+=lib/libncursesw.so.8

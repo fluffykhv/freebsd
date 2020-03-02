@@ -27,6 +27,8 @@ _PRIVATELIBS=	\
 		ldns \
 		sqlite3 \
 		ssh \
+		ssl \
+		crypto \
 		ucl \
 		unbound \
 		zstd
@@ -87,7 +89,6 @@ _LIBRARIES=	\
 		com_err \
 		compiler_rt \
 		crypt \
-		crypto \
 		ctf \
 		cuse \
 		cxxrt \
@@ -163,7 +164,6 @@ _LIBRARIES=	\
 		sdp \
 		sm \
 		smb \
-		ssl \
 		ssp_nonshared \
 		stats \
 		stdthreads \
