@@ -73,6 +73,7 @@ WARNS?=		3
 .if ${MK_OPENSSL} != "no"
 LIBADD+=	crypto
 CFLAGS+=	-DWITH_SSL
+CFLAGS+=	-I${WORLDTMP}/usr/include/private
 .else
 LIBADD+=	md
 .endif
