@@ -23,8 +23,8 @@ LIBADD=	archive elftc elf pe
 LIBADD+=	crypto
 .else
 LIBADD+=	md
-
 .endif
+
 CFLAGS+=-I${ELFTCDIR}/libelftc -I${ELFTCDIR}/libpe -I${ELFTCDIR}/common
 CFLAGS+=-DWITH_PE=1
 
