@@ -7,6 +7,8 @@ NO_LINT=
 KRB5DIR=	${SRCTOP}/crypto/heimdal
 
 CFLAGS+=	-DHAVE_CONFIG_H -I${.CURDIR:H:H}/include
+CFLAGS+=	-I${SRCTOP}/crypto/openssl/include
+CFLAGS+=	-I${.OBJDIR}/../../../secure/lib/libcrypto
 
 WARNS?=		1
 CWARNFLAGS.clang+=	-Wno-error=absolute-value
