@@ -16,6 +16,8 @@ CFLAGS+=	-DINET6
 
 .if ${MK_OPENSSL} != "no"
 CFLAGS+=	-DWITH_SSL
+CFLAGS+=	-I${SRCTOP}/crypto/openssl/include
+CFLAGS+=	-I${.OBJDIR:H:H}/secure/lib/libcrypto
 LIBADD+=	ssl crypto
 .else
 LIBADD+=	md
