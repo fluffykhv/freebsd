@@ -2059,6 +2059,15 @@ update: .PHONY
 # build-tools or cross-tools.
 #
 
+# libcrypto is now private, needed by libarchive, which is needed by elfcopy
+.if ${BOOTSTRAPPING} < 1300099
+.if ${MK_CRYPT} != "no"
+.if ${MK_OPENSSL} != "no"
+_secure_lib_libcrypto= secure/lib/libcrypto
+_secure_lib_libssl= secure/lib/libssl
+.endif
+.endif
+.endif
 
 # libnv and libl are both requirements for config(8), which is an unconditional
 # bootstrap-tool.
