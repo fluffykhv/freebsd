@@ -3156,7 +3156,7 @@ _xb-build-tools: .PHONY
 	${CDBENV} ${MAKE} ${CDMAKEARGS} -f Makefile.inc1 ${NOFUN} build-tools
 
 XDEVDIRS= \
-    ${_secure_lib_librypto}
+    ${_secure_lib_librypto} \
     ${_clang_libs} \
     ${_lld} \
     ${_binutils} \
