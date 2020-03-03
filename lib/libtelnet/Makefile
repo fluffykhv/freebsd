@@ -19,6 +19,8 @@ WARNS?=		2
 .if ${MK_OPENSSL} != "no"
 SRCS+=		encrypt.c auth.c enc_des.c sra.c pk.c
 CFLAGS+=	-DENCRYPTION -DAUTHENTICATION -DSRA
+CFLAGS+=	-I${SRCTOP}/crypto/openssl/include
+CFLAGS+=	-I${.OBJDIR:H:H}/secure/lib/libcrypto
 .endif
 
 .if ${MK_KERBEROS_SUPPORT} != "no"
