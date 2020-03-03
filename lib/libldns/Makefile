@@ -11,7 +11,7 @@ PRIVATELIB= true
 
 CFLAGS+= -I${LDNSDIR}
 CFLAGS+=-I${SRCTOP}/crypto/openssl/include
-CFLAGS+=-I${.OBJDIR}/../../secure/lib/libcrypto
+CFLAGS+=-I${.OBJDIR:H:H}/secure/lib/libcrypto
 
 SRCS=	buffer.c dane.c dname.c dnssec.c dnssec_sign.c dnssec_verify.c \
 	dnssec_zone.c duration.c error.c higher.c host2str.c host2wire.c \
