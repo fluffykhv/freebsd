@@ -2286,9 +2286,9 @@ _dtrace_tools= cddl/lib/libctf cddl/usr.bin/ctfconvert \
 _binutils=	gnu/usr.bin/binutils
 .endif
 .if ${MK_ELFTOOLCHAIN_BOOTSTRAP} != "no"
-_elftctools=	secure/lib/libcrypto
-_elftctool+s=	lib/libelftc \
+_elftctools=	lib/libelftc \
 		lib/libpe \
+		secure/lib/libcrypto \
 		usr.bin/objcopy \
 		usr.bin/nm \
 		usr.bin/size \
@@ -2300,9 +2300,9 @@ _elftctools+=	usr.bin/addr2line
 .elif ${TARGET_ARCH} != ${MACHINE_ARCH} && ${MK_ELFTOOLCHAIN_BOOTSTRAP} != "no"
 # If cross-building with an external binutils we still need to build strip for
 # the target (for at least crunchide).
-_elftctools=	secure/lib/libcrypto
-_elftctools+=	lib/libelftc \
+_elftctools=	lib/libelftc \
 		lib/libpe \
+		secure/lib/libcrypto \
 		usr.bin/objcopy
 .endif
 
