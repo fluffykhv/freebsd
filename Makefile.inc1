@@ -2003,6 +2003,16 @@ update: .PHONY
 # build-tools or cross-tools.
 #
 
+# libcrypto is now private, needed by libarchive, which is needed by elfcopy
+.if ${BOOTSTRAPPING} < 1300099
+.if ${MK_CRYPT} != "no"
+.if ${MK_OPENSSL} != "no"
+_secure_lib_libcrypto= secure/lib/libcrypto
+_secure_lib_libssl= secure/lib/libssl
+.endif
+.endif
+.endif
+
 # ELF Tool Chain libraries are needed for ELF tools and dtrace tools.
 # r296685 fix cross-endian objcopy
 # r310724 fixed PR 215350, a crash in libdwarf with objects built by GCC 6.2.
@@ -2276,7 +2286,8 @@ _dtrace_tools= cddl/lib/libctf cddl/usr.bin/ctfconvert \
 _binutils=	gnu/usr.bin/binutils
 .endif
 .if ${MK_ELFTOOLCHAIN_BOOTSTRAP} != "no"
-_elftctools=	lib/libelftc \
+_elftctools=	secure/lib/libcrypto
+_elftctool+s=	lib/libelftc \
 		lib/libpe \
 		usr.bin/objcopy \
 		usr.bin/nm \
@@ -2285,15 +2296,14 @@ _elftctools=	lib/libelftc \
 # These are not required by the build, but can be useful for developers who
 # cross-build on a FreeBSD 10 host:
 _elftctools+=	usr.bin/addr2line
-_elftctools+=	secure/lib/libcrypto
 .endif
 .elif ${TARGET_ARCH} != ${MACHINE_ARCH} && ${MK_ELFTOOLCHAIN_BOOTSTRAP} != "no"
 # If cross-building with an external binutils we still need to build strip for
 # the target (for at least crunchide).
-_elftctools=	lib/libelftc \
+_elftctools=	secure/lib/libcrypto
+_elftctools+=	lib/libelftc \
 		lib/libpe \
 		usr.bin/objcopy
-_elftctools+=	secure/lib/libcrypto
 .endif
 
 .if ${MK_CLANG_BOOTSTRAP} != "no"
