@@ -46,7 +46,7 @@ LIBADD+=	ldns
 .endif
 
 CFLAGS+= -I${SRCTOP}/crypto/openssl/include
-CFLAGS+= -I${.OBJDIR}/../../../secure/lib/libcrypto
+CFLAGS+= -I${.OBJDIR:H}/libcrypto
 CFLAGS+= -I${SSHDIR} -include ssh_namespace.h
 SRCS+=	 ssh_namespace.h
 
