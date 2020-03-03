@@ -74,6 +74,7 @@ WARNS?=		3
 LIBADD+=	crypto
 CFLAGS+=	-DWITH_SSL
 CFLAGS+=	-I${SRCTOP}/crypto/openssl/include
+CFLAGS+=	-I${.OBJDIR}/../../secure/lib/libcrypto
 .else
 LIBADD+=	md
 .endif
