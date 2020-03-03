@@ -16,6 +16,8 @@ CFLAGS+= -DHAVE_STDINT_H -DHAVE_INTTYPES_H -DQUADFMT='"llu"' -DQUADXFMT='"llx"'
 
 .if ${MK_OPENSSL} != "no"
 CFLAGS+= -DHAVE_LIBCRYPTO
+CFLAGS+=-I${SRCTOP}/crypto/openssl/include
+CFLAGS+=-I${.OBJDIR:H:H:H}/secure/lib/libcrypto
 LIBADD=	crypto
 .endif
 
