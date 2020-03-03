@@ -14,6 +14,8 @@ PACKAGE=	unbound
 
 CFLAGS+= -I${UNBOUNDDIR} -I${LDNSDIR} -I${.OBJDIR}
 CFLAGS+= -I${SRCTOP}/usr.sbin/unbound
+CFLAGS+= -I${SRCTOP}/crypto/openssl/include
+CFLAGS+= -I${.OBJDIR:H:H}/secure/lib/libcrypto
 
 SRCS=	alloc.c as112.c authzone.c autotrust.c cachedb.c config_file.c \
 	configlexer.l configparser.y context.c dname.c dns.c dns64.c \
