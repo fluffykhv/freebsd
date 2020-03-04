@@ -19,6 +19,8 @@ CFLAGS+=	-I${SRCTOP}/sys/contrib/zstd/lib
 
 .if ${MK_OPENSSL} != "no"
 CFLAGS+=	-DWITH_OPENSSL
+CFLAGS+=	-I${SRCTOP}/crypto/openssl/include
+CFLAGS+=	-I${.OBJDIR:H:H}/secure/lib/libcrypto
 LIBADD+=	crypto
 .else
 LIBADD+=	md
