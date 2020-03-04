@@ -14,5 +14,7 @@ SRCS+=	sha512c.c
 LIBADD=	md crypto
 
 CFLAGS+=-I${SRCTOP}/sys
+CFLAGS+=-I${SRCTOP}/crypto/openssl/include
+CFLAGS+=-I${.OBJDIR:H:H:H}/secure/lib/libcrypto
 
 .include <bsd.lib.mk>
