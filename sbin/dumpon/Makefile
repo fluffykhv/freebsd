@@ -7,7 +7,9 @@ PROG=	dumpon
 
 .if ${MK_OPENSSL} != "no"
 LIBADD=	crypto
-CFLAGS+=-DHAVE_CRYPTO
+CFLAGS+= -DHAVE_CRYPTO
+CFLAGS+= -I${SRCTOP}/crypto/openssl/include
+CFLAGS+= -I${.OBJDIR:H:H}/secure/lib/libcrypto
 .endif
 
 MAN=	dumpon.8
