@@ -4,6 +4,9 @@
 DMA_SOURCES=	${SRCTOP}/contrib/dma
 .PATH:	${DMA_SOURCES}
 
+CFLAGS+= -I${SRCTOP}/crypto/openssl/include
+CFLAGS+= -I${.OBJDIR:H:H}/secure/lib/libcrypto
+
 CFLAGS+= -I${DMA_SOURCES} \
 	-DHAVE_REALLOCF -DHAVE_STRLCPY -DHAVE_GETPROGNAME \
 	-DCONF_PATH='"/etc/dma"' \

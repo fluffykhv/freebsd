@@ -2,9 +2,6 @@
 
 .include <src.opts.mk>
 
-CFLAGS+=-I${SRCTOP}/crypto/openssl/include
-CFLAGS+=-I${.OBJDIR:H:H:H}/secure/lib/libcrypto
-
 LIBADD=	ssl crypto
 
 PROG=	dma
