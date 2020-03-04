@@ -32,6 +32,8 @@ LIBADD=		telnet util ncursesw
 .if ${MK_OPENSSL} != "no"
 SRCS+=		authenc.c
 CFLAGS+=	-DAUTHENTICATION -DENCRYPTION
+CFLAGS+=	-I${SRCTOP}/crypto/openssl/include
+CFLAGS+=	-I${.OBJDIR:H:H}/secure/lib/libcrypto
 LIBADD+=	mp crypto pam
 .endif
 
