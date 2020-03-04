@@ -24,6 +24,14 @@ LIBADD=	archive
 CFLAGS+=	-DHAVE_ICONV=1 -DHAVE_ICONV_H=1 -DICONV_CONST=const
 .endif
 
+.if ${MK_OPENSSL} != "no"
+CFLAGS+= -I${SRCTOP}/crypto/openssl/include
+CFLAGS+= -I${.OBJDIR:H:H}/secure/lib/libcrypto
+LIBADD+=	crypto
+.else
+LIBADD+=	md
+.endif
+
 HAS_TESTS=
 SUBDIR.${MK_TESTS}+= tests
 
