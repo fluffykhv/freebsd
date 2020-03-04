@@ -10,6 +10,8 @@ PACKAGE=	ssh
 
 WARNS?=	5
 CFLAGS+= -I${SSHDIR} -include ssh_namespace.h
+CFLAGS+= -I${SRCTOP}/crypto/openssl/include
+CFLAGS+=- I${.OBJDIR:H:H:H:H}/secure/lib/libcrypto
 SRCS+=	 ssh_namespace.h
 
 LIBADD=	ssh
