@@ -33,6 +33,10 @@ CFLAGS+=	-Wall
 SHLIB_MAJOR=	4
 MAN=		libradius.3 radius.conf.5
 
+INCSDIR=	${INCLUDEDIR}/private
+
+PRIVATELIB=	true
+
 MLINKS+=libradius.3 rad_acct_open.3 \
 	libradius.3 rad_add_server.3 \
 	libradius.3 rad_add_server_ex.3 \

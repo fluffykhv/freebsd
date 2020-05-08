@@ -25,6 +25,7 @@ _PRIVATELIBS=	\
 		heimipcc \
 		heimipcs \
 		ldns \
+		radius \
 		sqlite3 \
 		ssh \
 		ssl \
@@ -161,7 +162,6 @@ _LIBRARIES=	\
 		proc \
 		procstat \
 		pthread \
-		radius \
 		regex \
 		roken \
 		rpcsec_gss \

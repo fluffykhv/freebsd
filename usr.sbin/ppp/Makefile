@@ -72,6 +72,7 @@ LIBADD+=	crypto
 CFLAGS+=-DNORADIUS
 .else
 SRCS+=	radius.c
+CFLAGS+=	-I${INCLUDEDIR}/private
 LIBADD+=	radius
 .endif
 
